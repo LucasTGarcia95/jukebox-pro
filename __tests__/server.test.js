@@ -66,7 +66,7 @@ describe("Protected routes", () => {
       });
       expect(response.status).toBe(200);
 
-      token = response.text;
+      token = JSON.parse(response.text).token;
 
       expect(token).toBeDefined();
       expect(token).toMatch(/\w+\.\w+\.\w+/);
